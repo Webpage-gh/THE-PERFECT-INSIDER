@@ -35,7 +35,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assemble -x lint
     - name: Print APK path
-      rub: echo app/build/outputs/apk/**/*.apk
+      run: echo app/build/outputs/apk/**/*.apk
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
