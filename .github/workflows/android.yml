@@ -34,9 +34,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assemble -x lint
+    - name: Print APK path
+      rub: echo app/build/outputs/apk/**/*.apk
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: xposed-module-apk
-        path: app/build/outputs/apk/release/*.apk
+        path: app/build/outputs/apk/**/*.apk
 
