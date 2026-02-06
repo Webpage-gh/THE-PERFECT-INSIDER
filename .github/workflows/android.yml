@@ -34,3 +34,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: xposed-module-apk
+        path: app/build/outputs/apk/release/*.apk
+
